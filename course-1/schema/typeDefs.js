@@ -4,6 +4,7 @@ const typeDefs = `#graphql
         name: String!,
         age: Int!,
         nationality: Nationality,
+        friends: [User]
  }
 
  type Query{
