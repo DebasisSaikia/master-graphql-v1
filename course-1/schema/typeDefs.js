@@ -3,12 +3,22 @@ const typeDefs = `#graphql
         id: ID!,
         name: String!,
         age: Int!,
-        nationality: String,
+        nationality: Nationality,
  }
 
  type Query{
         users: [User!]!,
+        user(id: ID!): User,
  }
+
+#  enums in graphql
+enum Nationality{
+    CANADA
+    BRAZIL
+    INDIA
+    GERMANY
+    CHILE
+}
 `;
 
 export { typeDefs };
