@@ -1,4 +1,4 @@
-import { UserList } from '../data/index.js';
+import { MovieList, UserList } from '../data/index.js';
 import lodash from 'lodash';
 const resolvers={
     Query:{
@@ -8,6 +8,13 @@ const resolvers={
       user : (_, args) => {
         const user= lodash.find(UserList, {id: Number(args.id)});
         return user;
+      },
+      movies: () => {
+        return MovieList;
+      },
+      movie: (_, args) => {
+        const movie= lodash.find(MovieList, {isInTheaters: args.isReleased});
+        return movie;
       },
     }
   }
