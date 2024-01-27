@@ -10,13 +10,18 @@
 // server.listen(8000, () => console.log('Server is listening on port 8000...' ))
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 //GRAPHQL SERVER
 import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from '@apollo/server/standalone';
+import { startStandaloneServer } from "@apollo/server/standalone";
+import { typeDefs } from "./schema";
 
-const server = new ApolloServer({});
+const server = new ApolloServer({
+  typeDefs,
+  
+});
 
-const {url} = await startStandaloneServer({ server, port: 4000 });
+const { url } = await startStandaloneServer(server, {
+  listen: { port: 8000 },
+});
 
-console.log(`Server started at ${url}`)
+console.log(`Server started at ${url}`);
