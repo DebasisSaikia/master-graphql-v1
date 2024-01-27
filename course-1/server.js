@@ -1,19 +1,15 @@
 import { ApolloServer } from "apollo-server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-
+import { typeDefs } from "./schema/typeDefs.js";
+import { resolvers } from "./schema/resolvers.js";
 
 const server = new ApolloServer({
-  
-})
+  typeDefs,
+  resolvers,
+});
 
-// const express = require("express");
+const { url } = await startStandaloneServer(server, {
+  listen: { port: 8000 },
+});
 
-// const PORT = process.env.PORT || 8000;
-
-// const app = express();
-
-// app.get("/", (req, res) => {
-//   res.send("Hello from the express server!");
-// });
-
-// app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
+console.log(`Server started at ${url}`);

@@ -88,4 +88,4 @@ const UserList = [
     },
   ];
   
-  module.exports = { UserList, MovieList };
+  export { UserList, MovieList };
