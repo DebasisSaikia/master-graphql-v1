@@ -1,11 +1,19 @@
-const express = require("express");
+import { ApolloServer } from "apollo-server";
+import { startStandaloneServer } from "@apollo/server/standalone";
 
-const PORT = process.env.PORT || 8000;
 
-const app = express();
+const server = new ApolloServer({
+  
+})
 
-app.get("/", (req, res) => {
-  res.send("Hello from the express server!");
-});
+// const express = require("express");
 
-app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
+// const PORT = process.env.PORT || 8000;
+
+// const app = express();
+
+// app.get("/", (req, res) => {
+//   res.send("Hello from the express server!");
+// });
+
+// app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
