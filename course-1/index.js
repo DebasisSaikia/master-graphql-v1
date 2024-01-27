@@ -1,23 +1,10 @@
-const { ApolloServer, gql } = require('apollo-server');
+const http = require('http');
+const fs = require('fs');
 
-// Define your GraphQL schema
-const typeDefs = gql`
-    type Query {
-        hello: String
-    }
-`;
-
-// Define your resolvers
-const resolvers = {
-    Query: {
-        hello: () => 'Hello, world!',
-    },
-};
-
-// Create an instance of ApolloServer
-const server = new ApolloServer({ typeDefs, resolvers });
-
-// Start the server
-server.listen().then(({ url }) => {
-    console.log(`Server running at ${url}`);
+const server = http.createServer((req, res) => {
+    console.log(req.headers);
+    const logs = `${Date.now()} ${req.url} ${req.method} ${req.headers['user-agent']}\n`;
+    fs.appendFileSync('logs.txt', logs);
+    res.end('Hello from the server!');
 });
+server.listen(8000, () => console.log('Server is listening on port 8000...' ))
