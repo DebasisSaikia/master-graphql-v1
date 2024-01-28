@@ -41,6 +41,9 @@
   padding: 10px;
   margin-bottom: 10px;
 }
+.search-container{
+  width: 100%;
+}
 
 .read-the-docs {
   color: #888;
