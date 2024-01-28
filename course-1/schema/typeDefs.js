@@ -19,6 +19,7 @@ const typeDefs = `#graphql
         movies: [Movie!]!,
         user(id: ID!): User,
         movie(isReleased: Boolean!): Movie,
+        findMovie(name: String!): Movie,
  }
 
  input UserInput{

@@ -16,6 +16,10 @@ const resolvers={
         const movie= lodash.find(MovieList, {isInTheaters: args.isReleased});
         return movie;
       },
+      findMovie: (_, args) => {
+        const movie= lodash.find(MovieList, {name: args.name});
+        return movie;
+      }
     },
     Mutation:{
         addUser: (_, args) => {
