@@ -35,6 +35,12 @@
   padding: 8px;
   margin: 8px;
 }
+.search-input{
+  outline: none;
+  width: 40%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 
 .read-the-docs {
   color: #888;
