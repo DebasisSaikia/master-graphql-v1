@@ -1,5 +1,6 @@
 import './App.css'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import DisplayData from './components/DisplayData';
 
 function App() {
   const client = new ApolloClient({
@@ -8,7 +9,7 @@ function App() {
   });
   return (
     <ApolloProvider client={client}>
-      <h1>Apollo client</h1>
+      <DisplayData/>
     </ApolloProvider>
   )
 }
